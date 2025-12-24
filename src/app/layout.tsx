@@ -27,9 +27,6 @@ export default function RootLayout({
   return (
     <ProviderElement>
       <html lang="en">
-        <head>
-          <link rel="icon" href="/favicon.ico" sizes="any" className="rounded-full"/>
-        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >

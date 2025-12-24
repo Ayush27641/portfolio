@@ -59,9 +59,6 @@ interface LeetCodeProfile extends BaseProfile {
 
 interface GithubProfile extends BaseProfile {
   repositories: number;
-  contributions: number;
-  pull_requests_merged: number;
-  issues_reported: number;
   next_milestone: number;
 }
 
@@ -322,12 +319,12 @@ const CodingProfileCard: React.FC<CodingProfileCardProps> = ({
                     <div>
                       <p className="text-xs text-muted-foreground">
                         {platform === "Github"
-                          ? "Contributions"
+                          ? "Repositories"
                           : "Highest Rating"}
                       </p>
                       <p className="font-medium">
                         {platform === "Github"
-                          ? (profile as GithubProfile).contributions
+                          ? (profile as GithubProfile).repositories
                           : (profile as CodeChefProfile | CodeForcesProfile)
                               .highest_rating ||
                             (profile as LeetCodeProfile).rating}
@@ -347,7 +344,7 @@ const CodingProfileCard: React.FC<CodingProfileCardProps> = ({
                     <div>
                       <p className="text-xs text-muted-foreground">
                         {platform === "Github"
-                          ? "Pull Requests Merged"
+                          ? "Next Milestone"
                           : platform === "LeetCode"
                           ? "Reputation"
                           : "Global Rank"}
@@ -357,7 +354,7 @@ const CodingProfileCard: React.FC<CodingProfileCardProps> = ({
                           <Star className="h-4 w-4 fill-current text-yellow-500" />
                         )}
                         {platform === "Github"
-                          ? (profile as GithubProfile).pull_requests_merged
+                          ? (profile as GithubProfile).next_milestone
                           : platform === "LeetCode"
                           ? (profile as LeetCodeProfile).reputation
                           : `#${
@@ -380,14 +377,14 @@ const CodingProfileCard: React.FC<CodingProfileCardProps> = ({
                     <div>
                       <p className="text-xs text-muted-foreground">
                         {platform === "Github"
-                          ? "Issues Reported"
+                          ? "Progress %"
                           : platform === "LeetCode"
                           ? "Badges"
                           : "Country Rank"}
                       </p>
                       <p className="font-medium">
                         {platform === "Github"
-                          ? (profile as GithubProfile).issues_reported
+                          ? `${(profile as GithubProfile).progress}%`
                           : platform === "LeetCode"
                           ? (profile as LeetCodeProfile).badges
                           : `#${
