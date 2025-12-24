@@ -6,12 +6,7 @@ import { useMemo } from "react";
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Award,
-  Code,
-  BookOpen,
   Trophy,
-  Star,
-  Zap,
   ArrowRight,
   Medal,
 } from "lucide-react";
