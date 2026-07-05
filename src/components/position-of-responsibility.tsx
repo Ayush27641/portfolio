@@ -50,7 +50,7 @@ export default function PositionsOfResponsibility() {
       {
         id: 1,
         title: "Member, Paryavaran Shakti Club",
-        organization: "Environmental Club, IIIT Allahabad",
+        organization: "Environmental Club, IIIT Kota",
         period: "2024 - Present",
         icon: <Users className="h-6 w-6" />,
         color: "bg-green-600",
